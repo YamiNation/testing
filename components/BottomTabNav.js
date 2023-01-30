@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Notifications from '../screens/Notifications';
@@ -6,13 +6,13 @@ import Profile from '../screens/Profile';
 import Home from '../screens/Home';
 
 const Tab = createBottomTabNavigator();
-const BottomTabNav = () => {
+const BottomTabNav = (navigation) => {
   return (
-   <Tab.Navigator>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Profile" component={Profile} />
-    <Tab.Screen name="Notifications" component={Notifications} />
-   </Tab.Navigator>
+   <View>
+    <TouchableOpacity onPress={()=>navigation.navigate('Home')}><Text></Text></TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate('Notifications')}><Text>Notifications</Text></TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate('Profile')}><Text>Profile</Text></TouchableOpacity>
+   </View>
   )
 }
 

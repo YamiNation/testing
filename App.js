@@ -5,7 +5,7 @@ import BottomTabNav from "./components/BottomTabNav";
 import { View, Text } from 'react-native'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-import Player from "./Player";
+import Player from ".//components/Player";
 
 
 export default function App() {

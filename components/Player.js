@@ -1,18 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Play from '../screens/Play';
 import Pause from '../screens/Pause';
 import Next from '../screens/Next';
+import { useNavigation } from '@react-navigation/native';
 
 const Player = () => {
-    const Tab = createBottomTabNavigator();
+  const navigation = useNavigation();
   return (
-    <Tab.Navigator>
-        <Tab.Screen name="Play" component={Play}/>
-        <Tab.Screen name="Pause" component={Pause}/>
-        <Tab.Screen name="Next" component={Next}/>
-    </Tab.Navigator>
+    <View>
+    <TouchableOpacity onPress={()=>navigation.navigate('Play')}><Text>Play</Text></TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate('Pause')}><Text>Pause</Text></TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate('Next')}><Text>Next</Text></TouchableOpacity>
+   </View>
   )
 }
 
